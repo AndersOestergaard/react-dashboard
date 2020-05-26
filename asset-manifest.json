@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/react-dashboard/static/css/main.5eddd162.chunk.css",
-    "main.js": "/react-dashboard/static/js/main.9721a1b5.chunk.js",
-    "main.js.map": "/react-dashboard/static/js/main.9721a1b5.chunk.js.map",
+    "main.js": "/react-dashboard/static/js/main.bf12dc83.chunk.js",
+    "main.js.map": "/react-dashboard/static/js/main.bf12dc83.chunk.js.map",
     "runtime-main.js": "/react-dashboard/static/js/runtime-main.ab9e6ad5.js",
     "runtime-main.js.map": "/react-dashboard/static/js/runtime-main.ab9e6ad5.js.map",
     "static/css/2.01dd2b47.chunk.css": "/react-dashboard/static/css/2.01dd2b47.chunk.css",
     "static/js/2.84c34d21.chunk.js": "/react-dashboard/static/js/2.84c34d21.chunk.js",
     "static/js/2.84c34d21.chunk.js.map": "/react-dashboard/static/js/2.84c34d21.chunk.js.map",
     "index.html": "/react-dashboard/index.html",
-    "precache-manifest.42bb77d2352380c791ce9eacc04297f0.js": "/react-dashboard/precache-manifest.42bb77d2352380c791ce9eacc04297f0.js",
+    "precache-manifest.1a3a3f7d7f642669a732d60d02b442de.js": "/react-dashboard/precache-manifest.1a3a3f7d7f642669a732d60d02b442de.js",
     "service-worker.js": "/react-dashboard/service-worker.js",
     "static/css/2.01dd2b47.chunk.css.map": "/react-dashboard/static/css/2.01dd2b47.chunk.css.map",
     "static/css/main.5eddd162.chunk.css.map": "/react-dashboard/static/css/main.5eddd162.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.01dd2b47.chunk.css",
     "static/js/2.84c34d21.chunk.js",
     "static/css/main.5eddd162.chunk.css",
-    "static/js/main.9721a1b5.chunk.js"
+    "static/js/main.bf12dc83.chunk.js"
   ]
 }
