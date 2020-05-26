@@ -2,6 +2,7 @@ body {
     height: 100%;
     background-color: rgb(160, 160, 160);
     margin: 0;
+    overflow-x: hidden;
 }
 
 .header{
@@ -43,12 +44,11 @@ body {
   
   .main {
     height: 100%;
-    margin-left: 160px; /* Same as the width of the sidenav */
+    margin-left: 160px;
   }
   
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
-    // .sidenav a {font-size: 18px;}
   }
 
   //---------------------
@@ -72,18 +72,20 @@ button:focus {
   writing-mode: vertical-rl;
 }
 
+
+
 .widgetmenu {
   z-index: 2147483647;
-  height: 100%;
   position: fixed;
-  top: 0;
+  height: 50rem;
+  top: 5rem;
   right: 0;
   overflow: hidden;
 }
 
 .widget-toolbox{
   z-index: 100;
-  height: 52rem;
+  
 }
 
 .toolbox-open{
@@ -113,4 +115,15 @@ button:focus {
   border-left: 0;
   border-right: 0;
   border-radius: 0;
+}
+
+.navbar-sticky {
+  position: fixed;
+  top: 0;
+  right: 0;
+  animation: moveDown 0.5s ease-in-out;
+}
+
+.rotate180 {
+  transform: rotate(180deg);
 }

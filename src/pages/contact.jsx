@@ -4,10 +4,8 @@ export default class Contact extends Component {
   render() {
     return (
       <div>
-        <h2>GOT QUESTIONS?</h2>
-        <p>The easiest thing to do is post on
-        our <a href="http://forum.kirupa.com">forums</a>.
-        </p>
+        <h2>Just another empty Page</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div>
     );
   }

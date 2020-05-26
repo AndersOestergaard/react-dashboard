@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Accordion from 'react-bootstrap/Accordion';
-import Button from 'react-bootstrap/Button'; 
-import Nav from "react-bootstrap/Nav";
-import {Row, Col, Form, Collapse } from "react-bootstrap";
+import Button from 'react-bootstrap/Button';
+import { Row, Col, Form } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEllipsisH } from '@fortawesome/free-solid-svg-icons'
+import { faEllipsisH, faChevronLeft, faPlus } from '@fortawesome/free-solid-svg-icons'
 
-import TestWidget from '../widgets/testwidget'
+import Components from "../../components.js";
 
 import _ from "lodash";
 import { Responsive, WidthProvider } from "react-grid-layout";
@@ -15,98 +14,100 @@ import { Responsive, WidthProvider } from "react-grid-layout";
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
 const initialWidgets = [
-    {
-        id: 0,
-        name: 'TestWidget0',
-        layout: {
-          i: "0",
-          x: 0,
-          y: 0,
-          w: 7,
-          h: 10,
-          minW: 7,
-          minH: 10,
-          static: false,
-          isDraggable: true,
-          isResizable: true
-        }
-    },
-    {
-      id: 1,
-      name: 'TestWidget1',
-      layout: {
-        i: "1",
-        x: 0,
-        y: 0,
-        w: 4,
-        h: 6,
-        static: false,
-        isDraggable: true,
-        isResizable: true
-      }
-    },
-    {
-      id: 2,
-      name: 'TestWidget2',
-      layout: {
-        i: "2",
-        x: 0,
-        y: 0,
-        w: 7,
-        h: 10,
-        static: false,
-        isDraggable: true,
-        isResizable: true
-      }
-    },
-    {
-      id: 3,
-      name: 'TestWidget3',
-      layout: {
-        i: "3",
-        x: 0,
-        y: 0,
-        w: 7,
-        h: 10,
-        static: false,
-        isDraggable: true,
-        isResizable: true
-      }
-    },
-    {
-      id: 4,
-      name: 'TestWidget4',
-      layout: {
-        i: "4",
-        x: 0,
-        y: 0,
-        w: 7,
-        h: 10,
-        static: false,
-        isDraggable: true,
-        isResizable: true
-      }
+  {
+    id: 0,
+    component: 'chartWidget',
+    layout: {
+      i: "0",
+      x: 0,
+      y: 0,
+      w: 6,
+      h: 10,
+      minW: 6,
+      minH: 10,
+      static: false,
+      isDraggable: true,
+      isResizable: true
     }
-  ];
+  },
+  {
+    id: 1,
+    component: 'testwidget',
+    layout: {
+      i: "1",
+      x: 0,
+      y: 0,
+      w: 4,
+      h: 6,
+      static: false,
+      isDraggable: true,
+      isResizable: true
+    }
+  },
+  {
+    id: 2,
+    component: 'TestWidget2',
+    layout: {
+      i: "2",
+      x: 0,
+      y: 0,
+      w: 7,
+      h: 10,
+      static: false,
+      isDraggable: true,
+      isResizable: true
+    }
+  },
+  {
+    id: 3,
+    component: 'TestWidget3',
+    layout: {
+      i: "3",
+      x: 0,
+      y: 0,
+      w: 7,
+      h: 10,
+      static: false,
+      isDraggable: true,
+      isResizable: true
+    }
+  },
+  {
+    id: 4,
+    component: 'TestWidget4',
+    layout: {
+      i: "4",
+      x: 0,
+      y: 0,
+      w: 7,
+      h: 10,
+      static: false,
+      isDraggable: true,
+      isResizable: true
+    }
+  }
+];
 
 class ToolBoxItem extends React.Component {
 
   handleChange(event) {
     event.persist();
 
-    this.props.handleToUpdate(this.state)  
+    this.props.handleToUpdate(this.state)
   }
+  
 
   render() {
     return (
       <Card className="widget-list">
-        {console.log(this.props.item)}
         <Card.Header>
           <Row>
-            <Col><Button onClick={this.props.onTakeItem.bind(undefined, this.props.item)}>Add</Button></Col>
-            <Col><h4>{this.props.item.name}</h4></Col>
+            {/* <Col><Button as="FontAwesomeIcon" icon={faEllipsisH} onClick={this.props.onTakeItem.bind(undefined, this.props.item)}>+</Button></Col> */}
+            <Col><FontAwesomeIcon icon={faPlus} className="fa-2x" onClick={this.props.onTakeItem.bind(undefined, this.props.item)} /></Col>
+
+            <Col><h4>{this.props.item.i}</h4></Col>
             <Col>
-              <Accordion.Toggle className="settings-btn"  eventKey={this.props.item.i}>
+              <Accordion.Toggle className="settings-btn" eventKey={this.props.item.i}>
                 <FontAwesomeIcon icon={faEllipsisH} className="fa-2x" />
               </Accordion.Toggle>
             </Col>
@@ -119,12 +120,12 @@ class ToolBoxItem extends React.Component {
               <Form.Row>
                 <Form.Group as={Col} controlId="formGridXPosition">
                   <Form.Label>X Position</Form.Label>
-                  <Form.Control size="sm" type="number" value={this.props.item.x} onChange={this.handleChange}/>
+                  <Form.Control size="sm" type="number" value={this.props.item.x} onChange={this.handleChange} />
                 </Form.Group>
 
                 <Form.Group as={Col} controlId="formGridYPosition">
                   <Form.Label>Y Position</Form.Label>
-                  <Form.Control size="sm" type="number" readOnly value={this.props.item.y}/>
+                  <Form.Control size="sm" type="number" readOnly value={this.props.item.y} />
                 </Form.Group>
               </Form.Row>
             </Form>
@@ -145,35 +146,33 @@ class ToolBox extends React.Component {
 
   toggleToolbox() {
     this.setState({ open: !this.state.open })
-    // this.props.onCompactTypeChange(this.state.open);
-  }
-  
-  closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
   }
 
   render() {
     return (
-      <div class="d-flex flex-row widgetMenu">
-            <Button variant="secondary" className="open-widget-btn"
-              onClick={() => this.toggleToolbox()}
-              aria-controls="Open widget List"
-              aria-expanded={this.state.open}>
-                <span className="horizontal-btn-text">Widgets</span>
-            </Button>
-            <div className={`bg-dark widget-toolbox ${this.state.open ? "toolbox-open" : "toolbox-closed"}`}>
-              <Accordion className="flex-grow w-100 widget-list">
-                {this.props.items.map(item => (
-                  <ToolBoxItem
-                    key={item.id}
-                    item={item}
-                    onTakeItem={this.props.onTakeItem}
-                    handleToUpdate={this.props.handleToUpdate}
-                  />
-                ))}
-              </Accordion>
-            </div >
+      <div className={`d-flex flex-row widgetmenu`}>
+        <Button variant="secondary" className="open-widget-btn p-1"
+          onClick={() => this.toggleToolbox()}
+          aria-controls="Open widget List"
+          aria-expanded={this.state.open}>
+          {/* <span className="horizontal-btn-text">Widgets</span> */}
+          <FontAwesomeIcon icon={faChevronLeft} className={`fa-2x ${this.state.open ? "rotate180" : ""}`} />
+        </Button>
+        <div className={`bg-dark widget-toolbox ${this.state.open ? "toolbox-open" : "toolbox-closed"}`}>
+          <div>
+            <h3 className="text-white text-center">Toolbox</h3>
+          </div>
+          <Accordion className="flex-grow w-100 widget-list">
+            {this.props.items.sort((a, b) => a.i - b.i).map(item => (
+              <ToolBoxItem
+                key={item.id}
+                item={item}
+                onTakeItem={this.props.onTakeItem}
+                handleToUpdate={this.props.handleToUpdate}
+              />
+            ))}
+          </Accordion>
+        </div >
       </div>
     );
   }
@@ -183,7 +182,7 @@ export default class DashboardBasicGridLayout extends React.Component {
   static defaultProps = {
     className: "layout",
     rowHeight: 30,
-    onLayoutChange: function() {},
+    onLayoutChange: function () { },
     cols: { lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 },
     initialLayout: generateWidgetLayouts()
   };
@@ -191,7 +190,7 @@ export default class DashboardBasicGridLayout extends React.Component {
   state = {
     active: false,
     currentBreakpoint: "lg",
-    compactType: null,
+    compactType: "vertical",
     mounted: false,
     layouts: { lg: [] },
     toolbox: { lg: this.props.initialLayout },
@@ -213,7 +212,7 @@ export default class DashboardBasicGridLayout extends React.Component {
             </div>
           </Card.Header>
           <Card.Body className="overflow-hidden">
-            <TestWidget></TestWidget>
+            {initialWidgets.filter(x => x.id.toString() === l.i).map(widget => Components(widget))}
           </Card.Body>
         </Card>
       );
@@ -233,19 +232,18 @@ export default class DashboardBasicGridLayout extends React.Component {
     }));
   };
 
-  onCompactTypeChange = (openState) => {
-    // const { compactType: oldCompactType } = this.state;
+  onCompactTypeChange = () => {
+    const { compactType: oldCompactType } = this.state;
     const compactType =
-      openState === true
-        ? "horizontal"
-        : null;
+      oldCompactType === "horizontal"
+        ? "vertical"
+        : oldCompactType === "vertical"
+        ? null
+        : "horizontal";
     this.setState({ compactType });
   };
 
   onTakeItem = item => {
-    console.log("take Item");
-    console.log(item);
-
     this.setState(prevState => ({
       toolbox: {
         ...prevState.toolbox,
@@ -264,9 +262,6 @@ export default class DashboardBasicGridLayout extends React.Component {
   };
 
   onPutItem = item => {
-    console.log("Put Item");
-    console.log(item);
-
     this.setState(prevState => {
       return {
         toolbox: {
@@ -297,30 +292,22 @@ export default class DashboardBasicGridLayout extends React.Component {
     });
   };
 
-  updateGrid() {
-    // Force a render without state change...
-    this.forceUpdate();
-  }
-
   render() {
     return (
-      <div class="d-flex flex-row">
-          <div className="flex-fill dashboardGrid mx-4 mt-3" >
-            <ResponsiveReactGridLayout
-                {...this.props}
-                layouts={this.state.layouts}
-                onBreakpointChange={this.onBreakpointChange}
-                onLayoutChange={this.onLayoutChange}
-                // WidthProvider option
-                measureBeforeMount={false}
-                // I like to have it animate on mount. If you don't, delete `useCSSTransforms` (it's default `true`)
-                // and set `measureBeforeMount={true}`.
-                useCSSTransforms={this.state.mounted}
-                compactType={this.state.compactType}
-                preventCollision={!this.state.compactType}
-              >
-                {this.generateDOM()}
-                {/* {this.props.widgets.map((_widget) => {
+      <div className="d-flex flex-row">
+        <div className="flex-fill dashboardGrid ml-4 pr-1 mr-5 mt-3" >
+          <ResponsiveReactGridLayout
+            {...this.props}
+            layouts={this.state.layouts}
+            onBreakpointChange={this.onBreakpointChange}
+            onLayoutChange={this.onLayoutChange}
+            measureBeforeMount={true}
+            useCSSTransforms={this.state.mounted}
+            compactType={this.state.compactType}
+            preventCollision={!this.state.compactType}
+          >
+            {this.generateDOM()}
+            {/* {this.props.widgets.map((_widget) => {
                   return (
                     <div key={_widget.id} 
                       data-grid={{ 
@@ -334,22 +321,21 @@ export default class DashboardBasicGridLayout extends React.Component {
                     </div>
                   );
                 })} */}
-            </ResponsiveReactGridLayout>
-          </div>
-          <div className="px-0">
+          </ResponsiveReactGridLayout>
+        </div>
+        <div className="px-0">
           <ToolBox
-                  items={this.state.toolbox[this.state.currentBreakpoint] || []} 
-                  onTakeItem={this.onTakeItem}
-                  onCompactTypeChange={this.onCompactTypeChange} />
-            
-          </div>   
+            items={this.state.toolbox[this.state.currentBreakpoint] || []}
+            onTakeItem={this.onTakeItem} />
+
+        </div>
       </div>
     );
   }
 }
 
 function generateLayout() {
-  return _.map(_.range(0, 25), function(item, i) {
+  return _.map(_.range(0, 25), function (item, i) {
     var y = Math.ceil(Math.random() * 4) + 1;
     return {
       x: (_.random(0, 5) * 2) % 12,
@@ -363,7 +349,7 @@ function generateLayout() {
 }
 
 function generateWidgetLayouts() {
-  return _.map(initialWidgets, function(widget, i) {
+  return _.map(initialWidgets, function (widget, i) {
     return widget.layout;
   });
 }
