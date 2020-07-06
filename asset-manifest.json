@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/react-dashboard/static/css/main.be0f2d0d.chunk.css",
-    "main.js": "/react-dashboard/static/js/main.b483642e.chunk.js",
-    "main.js.map": "/react-dashboard/static/js/main.b483642e.chunk.js.map",
+    "main.css": "/react-dashboard/static/css/main.b310f8ba.chunk.css",
+    "main.js": "/react-dashboard/static/js/main.8aa25904.chunk.js",
+    "main.js.map": "/react-dashboard/static/js/main.8aa25904.chunk.js.map",
     "runtime-main.js": "/react-dashboard/static/js/runtime-main.ab9e6ad5.js",
     "runtime-main.js.map": "/react-dashboard/static/js/runtime-main.ab9e6ad5.js.map",
     "static/css/2.01dd2b47.chunk.css": "/react-dashboard/static/css/2.01dd2b47.chunk.css",
-    "static/js/2.73c474cf.chunk.js": "/react-dashboard/static/js/2.73c474cf.chunk.js",
-    "static/js/2.73c474cf.chunk.js.map": "/react-dashboard/static/js/2.73c474cf.chunk.js.map",
+    "static/js/2.eeca721a.chunk.js": "/react-dashboard/static/js/2.eeca721a.chunk.js",
+    "static/js/2.eeca721a.chunk.js.map": "/react-dashboard/static/js/2.eeca721a.chunk.js.map",
     "index.html": "/react-dashboard/index.html",
-    "precache-manifest.75a0eddff934878f233f10d25a34185a.js": "/react-dashboard/precache-manifest.75a0eddff934878f233f10d25a34185a.js",
+    "precache-manifest.13aaa7bb6b299a6c7407f71438ecf8b5.js": "/react-dashboard/precache-manifest.13aaa7bb6b299a6c7407f71438ecf8b5.js",
     "service-worker.js": "/react-dashboard/service-worker.js",
     "static/css/2.01dd2b47.chunk.css.map": "/react-dashboard/static/css/2.01dd2b47.chunk.css.map",
-    "static/css/main.be0f2d0d.chunk.css.map": "/react-dashboard/static/css/main.be0f2d0d.chunk.css.map",
-    "static/js/2.73c474cf.chunk.js.LICENSE.txt": "/react-dashboard/static/js/2.73c474cf.chunk.js.LICENSE.txt",
+    "static/css/main.b310f8ba.chunk.css.map": "/react-dashboard/static/css/main.b310f8ba.chunk.css.map",
+    "static/js/2.eeca721a.chunk.js.LICENSE.txt": "/react-dashboard/static/js/2.eeca721a.chunk.js.LICENSE.txt",
     "static/media/custom.scss": "/react-dashboard/static/media/revicons.2feb69cc.eot"
   },
   "entrypoints": [
     "static/js/runtime-main.ab9e6ad5.js",
     "static/css/2.01dd2b47.chunk.css",
-    "static/js/2.73c474cf.chunk.js",
-    "static/css/main.be0f2d0d.chunk.css",
-    "static/js/main.b483642e.chunk.js"
+    "static/js/2.eeca721a.chunk.js",
+    "static/css/main.b310f8ba.chunk.css",
+    "static/js/main.8aa25904.chunk.js"
   ]
 }
